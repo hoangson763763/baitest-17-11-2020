@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<h1>EXP1: Cấu trúc lại mảng</h1>
+	<script type="text/javascript">
+		let arr = [11,2,8,10,5,99,1,8,9];
+		function strucArr(arr){
+			if(arr.length > 6)
+			{
+				let length = arr.length/3;
+				let newArr = [];
+				let x = 0;
+				let y = 1;
+				let z = 2;
+				let arrX = [];
+				let arrY = [];
+				let arrZ = [];
+				for(var i =0;i < length;i++){
+					 arrX.push(arr[x]);
+					 arrY.push(arr[y]);
+					 arrZ.push(arr[z])
+					x = x + length;
+					y = y + length;
+					z = z + length;
+
+				}
+				return newArr.concat(arrX).concat(arrY).concat(arrZ);
+			}
+		}
+		console.log(strucArr(arr));
+	</script>
+
+	<h2>EXP2:Tìm tổng lớn nhất của 2 phần tử trong mảng số nguyên</h2>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			let arr = [0,100,-4,8,145,5,99,1000];
+			function sum(arr){
+				var x = -Math.pow(2,30);
+				var y = Math.pow(2,30) - 1;
+				var a = arr[0];
+				var b = arr[0];
+				for(var i = 0;i < arr.length; i++){
+					if(x <= arr[i] <= y){
+						if(arr[i] > a){
+							a = arr[i];
+						}
+					}
+				}
+				
+				for(var i = 0;i < arr.length; i++){
+					if(x <= arr[i] <= y){
+						if(b < arr[i] && arr[i] < a){
+							b = arr[i];
+						}
+					}
+				}
+			
+				return a + b;
+			}
+			console.log(sum(arr));		
+		});
+	</script>
+</body>
+</html>
